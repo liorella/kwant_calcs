@@ -130,7 +130,7 @@ def wavefunc_finite_bias(sys, params, mu1, mu2, T1, T2, lead_in, cutoff = 1e-2, 
             print('in energy = '+str(energy), end='\r', flush=True)
 
     density = np.array(density)
-    return np.sum(density, axis=0)
+    return (energies[1]-energies[0])*np.sum(density, axis=0)
 
 
 def linecut_at_dim(sys, lat, wf, dim, num_translations):
